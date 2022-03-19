@@ -125,6 +125,7 @@ function addFieldImage(table, idx, name, data) {
   idx += 1
   //row.setAttribute("style", "display:none");
   cell = row.insertCell(0);
+  
   cell.setAttribute("colspan", 2);
   var img = document.createElement('img');
   img.src = data.filename;

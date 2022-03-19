@@ -55,7 +55,7 @@ var config_data = `
         "code":"t",
         "type":"team",
         "min":1,
-        "max":9999
+        "max":99999
       },
       "Auto Start Position": {
         "code":"as",
@@ -80,7 +80,7 @@ var config_data = `
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
-      "Auto Acquired Cargo": {
+      "Auto Aqcuired Cargo": {
         "code":"ac",
         "title": "Picked up more cargo?",
         "type":"bool"
@@ -152,7 +152,7 @@ var config_data = `
           "4":"Traversal<br>",
           "n":"No successful rung<br>",
           "x":"n/a"
-        },f
+        },
         "defaultValue":"x"
       },
       "Started Climb before Endgame": {
