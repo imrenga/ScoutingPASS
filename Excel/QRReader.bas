@@ -3,14 +3,15 @@ Sub process1QRCodeInput()
     saveData (getInput())
 End Sub
 
-Sub process6QRCodeInput()
-    saveData (getInput())
-    saveData (getInput())
-    saveData (getInput())
-    saveData (getInput())
-    saveData (getInput())
-    saveData (getInput())
-End Sub
+' not necessary
+' Sub process6QRCodeInput()
+'     saveData (getInput())
+'     saveData (getInput())
+'     saveData (getInput())
+'     saveData (getInput())
+'     saveData (getInput())
+'     saveData (getInput())
+' End Sub
 
 Public Function getInput()
     getInput = InputBox("Scan QR Code", "Match Scouting Input")

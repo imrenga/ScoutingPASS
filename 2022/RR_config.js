@@ -55,7 +55,7 @@ var config_data = `
         "code":"t",
         "type":"team",
         "min":1,
-        "max":99999
+        "max":9999
       },
       "Auto Start Position": {
         "code":"as",
@@ -80,7 +80,7 @@ var config_data = `
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
-      "Auto Aqcuired Cargo": {
+      "Auto Acquired Cargo": {
         "code":"ac",
         "title": "Picked up more cargo?",
         "type":"bool"
