@@ -1,3 +1,4 @@
+
 var config_data = 
     `
 {
@@ -5,66 +6,27 @@ var config_data =
   "page_title":"Rapid React",
   "elements":{
     "prematch": {
-      "Scouter Initials": {
-        "code":"s",
-        "type":"scouter",
-        "size":5,
-        "maxSize":5,
-      },
-      "Event":{
-        "code":"e",
-        "type":"event",
-        "defaultValue":"2022txfor",
-        "disabled":"true"
-      },
-      "Match Level":{
-        "code":"l",
-        "type":"level",
-        "choices":{
-          "qm":"Quals<br>",
-          "ef":"Eighth-Final<br>",
-          "qf":"Quarter-Final<br>",
-          "sf":"Semi-Final<br>",
-          "f":"Final"
-        },
-        "defaultValue":"qm",
-      },
-      "Match #":{
-        "code":"m",
-        "type":"match",
-        "min":1,
-        "max":100,
-      },
-     "Robot": {
-        "code":"r",
-        "type":"robot",
-        "choices":{
-          "r1":"Red-1",
-          "b1":"Blue-1<br>",
-          "r2":"Red-2",
-          "b2":"Blue-2<br>",
-          "r3":"Red-3",
-          "b3":"Blue-3"
-        },
-      },
-      "Team #": {
-        "code":"t",
-        "type":"team",
-        "min":1,
-        "max":9999
-      },
-      "Auto Start Position": {
+      "Starting Location": {
         "code":"as",
-        "title": "Auto Start Position",
-        "type":"field_image",
-        "filename":"2022/field_image.png"
+        "title": "Starting Location",
+        "type":"counter"
+      },
+      "Cargo Preload": {
+          "code":"cp",
+          "title": "Cargo Preload",
+          "type":"bool"
       }
     },
     "auton": {
-      "Taxi": {
+      "Taxi on Tarmac": {
         "code":"at",
-        "title": "Taxied?",
+        "title": "Taxi on Tarmac?",
         "type":"bool"
+      },
+      "Auto Acquired Cargo": {
+        "code":"ac",
+        "title": "Cargo auto-acquired?",
+        "type":"counter"
       },
       "Upper Cargo Scored": {
         "code":"au",
@@ -75,14 +37,14 @@ var config_data =
         "code":"al",
         "title": "Lower Cargo Scored",
         "type":"counter"
-      },
-      "Auto Acquired Cargo": {
-        "code":"ac",
-        "title": "Picked up more cargo?",
-        "type":"bool"
       }
     },
     "teleop": {
+        "Cargo Acquired": {
+            "code":"ca",
+            "title":"Cargo Acquired",
+            "type":"counter"
+        },
       "Upper Cargo Scored": {
         "code":"tu",
         "title": "Upper Cargo Scored",
@@ -93,39 +55,31 @@ var config_data =
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
-      "Was Defended": {
-        "code":"wd",
-        "title": "Was Defended",
-        "type":"bool"
+      "Cargo Missed": {
+        "code":"cm",
+        "title": "Cargo Missed",
+        "type":"counter"
       },
-      "Wallbot?": {
-        "code":"wbt",
-        "title": "Wallbot?",
-        "type":"bool"
+      "Defensive Performance": {
+        "code":"dp",
+        "title":"Defense (1-3)",
+        "type":"counter"
       },
-      "Cargo Intake From": {
-        "code":"cif",
-        "title": "Cargo Intake From",
-        "type":"radio",
-        "choices":{
-          "t":"Terminal<br>",
-          "g":"Ground<br>",
-          "b":"Both<br>",
-          "x":"Not Attempted"
-        },
-        "defaultValue":"x"
-      },
-      "Shooting Spot": {
-        "code":"ss",
-        "title": "Shooting Spot",
-        "type":"field_image",
-        "filename":"2022/field_image.png"
+      "Defensive Evasion": {
+        "code":"de",
+        "title":"Defense Evasion(1-3)",
+        "type":"counter"
       }
     },
     "endgame": {
-      "Climb": {
-        "code":"c",
-        "title": "Climb",
+        "Climb Attempted": {
+            "code":"c",
+            "title":"Climb Attempted",
+            "type":"bool"
+        },
+      "Climb Level": {
+        "code":"cl",
+        "title": "Climb Level",
         "type":"radio",
         "choices":{
           "1":"Low<br>",
@@ -136,94 +90,25 @@ var config_data =
           "x":"Not attempted"
         },
         "defaultValue":"x"
-      },
-      "If climb failed,<br>Last successful rung,<br>if any": {
-        "code":"lsr",
-        "title": "If climb failed,<br>last successful rung,<br>if any",
-        "type":"radio",
-        "choices":{
-          "1":"Low<br>",
-          "2":"Mid<br>",
-          "3":"High<br>",
-          "4":"Traversal<br>",
-          "n":"No successful rung<br>",
-          "x":"n/a"
-        },
-        "defaultValue":"x"
-      },
-      "Started Climb before Endgame": {
-        "code":"be",
-        "title": "Started climb before EndGame",
-        "type":"bool"
-      },
-      "Num of Robots Climbed": {
-        "code":"cn",
-        "title": "# of alliance bots climbed",
-        "type":"counter"
       }
     },
     "postmatch": {
-      "Driver Skill": {
-        "code":"ds",
-        "title": "Driver Skill",
-        "type":"radio",
-        "choices":{
-          "n":"Not Effective<br>",
-          "a":"Average<br>",
-          "v":"Very Effective<br>",
-          "x":"Not Observed"
-        },
-        "defaultValue":"x"
-      },
-      "Defense Rating": {
-        "code":"dr",
-        "title": "Defense Rating",
-        "type":"radio",
-        "choices":{
-          "n":"Not Effective<br>",
-          "a":"Average<br>",
-          "v":"Very Effective<br>",
-          "x":"Not Observed"
-        },
-        "defaultValue":"x"
-      },
-      "Shot enemy balls away?": {
-        "code":"ba",
-        "title": "Shot enemy balls away?",
-        "type":"bool"
-      },
-      "Died/Tipped": {
-        "code":"d",
-        "title": "Died/Tipped",
-        "type":"bool"
-      },
       "Card Foul": {
         "code":"cf",
-        "title": "Yellow/Red Card",
+        "title": "Card Foul",
         "type":"bool"
       },
-      "Make good alliance partner?": {
-        "code":"all",
-        "title": "Make good alliance partner?",
-        "type":"bool"
+      "Technical Card Foul": {
+          "code":"tcf",
+          "title": "Technical Card Foul",
+          "type":"bool"
       },
       "Comments": {
         "code":"co",
         "title": "Comments",
         "type":"text",
         "size":15,
-        "maxSize":50
-      },
-      "Confidence Rating": {
-        "code":"cnf",
-        "title": "Confidence Rating",
-        "type":"radio",
-        "choices":{
-          "v":"Very Confident<br>",
-          "a":"Average<br>",
-          "n":"Not Confident"
-      },
-       "defaultValue":"a"
+        "maxSize":100
     }
     }
   }
